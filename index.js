@@ -11,7 +11,7 @@ function bankNumber(num) {
 }
 function sortN(n) {
   for (let i = 0; i < n; i++) {
-    const num = bank.pop();
+    const num = bank.shift();
     if (num % 2 == 0) {
       evens.push(num);
     } else {
@@ -60,6 +60,7 @@ function NumberValue(num) {
 
 function NumberList(numbers) {
   const $numberList = document.createElement("p");
+  $numberList.classList.add("number-list");
   const $numbers = numbers.map(NumberValue);
   $numberList.replaceChildren(...$numbers);
   return $numberList;
